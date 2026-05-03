@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+torch
+torchvision
+opencv-python-headless
+numpy==1.23.5
+pillow
+matplotlib
+tqdm
+imgaug==0.4.0
+python-multipart
