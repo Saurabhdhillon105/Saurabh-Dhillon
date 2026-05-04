@@ -10,7 +10,7 @@ model = load_model()
 
 @app.get("/")
 def home():
-    print("yes")
+    print("yes saurabh")
     return {"msg": "YOLOv3 running (clean inference setup)"}
 
 
