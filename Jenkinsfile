@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/your-repo.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t yolo-fastapi .'
@@ -17,14 +11,14 @@ pipeline {
 
         stage('Stop Old Container') {
             steps {
-                sh 'docker stop yolo-container || true'
-                sh 'docker rm yolo-container || true'
+                sh 'docker stop yolo || true'
+                sh 'docker rm yolo || true'
             }
         }
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 8000:8000 --name yolo-container yolo-fastapi'
+                sh 'docker run -d -p 8000:8000 --name yolo yolo-fastapi'
             }
         }
     }
