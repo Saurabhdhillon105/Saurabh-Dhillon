@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 import shutil
-
+import cv2
 from model import load_model, predict_image
 
 app = FastAPI()
@@ -10,7 +10,7 @@ model = load_model()
 
 @app.get("/")
 def home():
-    print("yes saurabh")
+    
     return {"msg": "YOLOv3 running (clean inference setup)"}
 
 
